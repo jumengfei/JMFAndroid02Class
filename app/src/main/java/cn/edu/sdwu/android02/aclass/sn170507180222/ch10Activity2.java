@@ -2,6 +2,7 @@ package cn.edu.sdwu.android02.aclass.sn170507180222;
 
 import android.content.Intent;
 import android.net.Uri;
+import android.provider.ContactsContract;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -57,6 +58,15 @@ public class ch10Activity2 extends AppCompatActivity {
                 Toast.makeText(this,"cancel",Toast.LENGTH_LONG).show();
             }
 
+        }else if (requestCode==102){
+            //从联系人列表返回的结果
+            if(resultCode==RESULT_OK){
+                //得到联系人的信息(仅有联系人的编号，lookup uri)
+                String content=data.getDataString();
+                Toast.makeText(this,content,Toast.LENGTH_LONG).show();
+            }else{
+                Toast.makeText(this,"cancel",Toast.LENGTH_LONG).show();
+            }
         }
     }
 
@@ -64,6 +74,44 @@ public class ch10Activity2 extends AppCompatActivity {
         //使用隐式启动方式打开网页
         //两个参数分别是需要执行的动作 和传递的参数
         Intent intent=new Intent(Intent.ACTION_VIEW, Uri.parse("http://baidu.com"));
+        startActivity(intent);
+    }
+
+    public void contactsList(View view){
+        //使用隐式启动打开通讯录
+        Intent intent=new Intent(Intent.ACTION_VIEW,Uri.parse("content://contacts/people/"));
+        startActivity(intent);
+    }
+
+    public void contactsDetail(View view){
+        //使用隐式启动查看联系人的详细信息
+        Intent intent=new Intent(Intent.ACTION_EDIT);
+        intent.setData(Uri.parse("content://contacts/people/1"));
+        startActivity(intent);
+    }
+
+    public void showMap(View view){
+        //使用隐式启动打开地图
+        Intent intent=new Intent(Intent.ACTION_VIEW,Uri.parse("geo:50.123,7.1434"));//两个浮点数分别表示经度和维度
+    }
+
+    public void showPhoto(View view){
+        //使用隐式启动打开相册
+        Intent intent=new Intent(Intent.ACTION_VIEW,Uri.parse("content://media/external/images/media/"));
+        startActivity(intent);
+    }
+
+    public void pickContact(View view){
+        //使用隐式启动的方法。
+        // 以子Activity的形式，打开联系人列表，让用户选择一个联系人再返回结果。
+        Intent intent=new Intent(Intent.ACTION_PICK);
+        intent.setData(ContactsContract.Contacts.CONTENT_URI);//传入数据
+        startActivityForResult(intent,102);//第二个参数为请求码
+    }
+    public void implicitStart(View view){
+        //用过滤器方法实现跳转到上一个界面
+        Intent intent=new Intent("com.inspur.action2");
+        intent.setData(Uri.parse("abc://inspur.com"));
         startActivity(intent);
     }
 }

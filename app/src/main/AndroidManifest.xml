@@ -2,6 +2,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="cn.edu.sdwu.android02.aclass.sn170507180222">
 
+    <!-- 读取通讯录的权限 -->
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -9,16 +12,22 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
-        </activity>
-        <activity android:name=".ch10Activity1" />
-        <activity android:name=".ch10Activity2" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+        <activity android:name=".MainActivity" />
+        <activity android:name=".ch10Activity1">
 
-                <category android:name="android.intent.category.LAUNCHER" />
+            <!-- 过滤器三部分构成 action代表动作 data代表数据 category代表类别 -->
+            <!-- ch10Activity2过滤器关联代码，实现跳转到上一个界面 -->
+            <intent-filter>
+                <action android:name="com.inspur.action2" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+
+                <data
+                    android:host="inspur.com"
+                    android:scheme="abc" /> <!-- scheme代表协议 host代表主机 -->
             </intent-filter>
         </activity>
+        <activity android:name=".ch10Activity2"></activity>
 
         <!-- ch10Activity2的广播代码 -->
         <receiver
@@ -26,11 +35,29 @@
             android:enabled="true"
             android:exported="true">
             <intent-filter>
-                <action android:name="com.inspur.broadcast" /></intent-filter>
+                <action android:name="com.inspur.broadcast" />
+            </intent-filter>
         </receiver>
 
-        <activity android:name=".ch10Activity3">
+        <activity android:name=".ch10Activity3" />
+
+        <service
+            android:name=".MyService"
+            android:enabled="true"
+            android:exported="true" />
+
+        <activity android:name=".ch12Activity1">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
+
+        <service
+            android:name=".MyService2"
+            android:enabled="true"
+            android:exported="true"></service>
     </application>
 
 </manifest>

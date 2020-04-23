@@ -32,4 +32,36 @@
         android:onClick="web"
         android:layout_height="wrap_content" />
 
+    <Button
+        android:layout_width="wrap_content"
+        android:text="contactsList"
+        android:onClick="contactsList"
+        android:layout_height="wrap_content" />
+    <Button
+        android:layout_width="wrap_content"
+        android:text="contactsDetail"
+        android:onClick="contactsDetail"
+        android:layout_height="wrap_content" />
+    <Button
+        android:layout_width="wrap_content"
+        android:text="showMap"
+        android:onClick="showMap"
+        android:layout_height="wrap_content" />
+    <Button
+        android:layout_width="wrap_content"
+        android:text="showPhoto"
+        android:onClick="showPhoto"
+        android:layout_height="wrap_content" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:text="PICK_CONTACT"
+        android:onClick="pickContact"
+        android:layout_height="wrap_content" />
+    <Button
+        android:layout_width="wrap_content"
+        android:text="implicitStart"
+        android:onClick="implicitStart"
+        android:layout_height="wrap_content" />
+
 </LinearLayout>
