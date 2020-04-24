@@ -1,4 +1,5 @@
 package cn.edu.sdwu.android02.aclass.sn170507180222;
+//布局文件：layout_ch12_1
 
 import android.app.Service;
 import android.content.Intent;

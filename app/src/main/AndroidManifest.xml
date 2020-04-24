@@ -27,7 +27,7 @@
                     android:scheme="abc" /> <!-- scheme代表协议 host代表主机 -->
             </intent-filter>
         </activity>
-        <activity android:name=".ch10Activity2"></activity>
+        <activity android:name=".ch10Activity2" />
 
         <!-- ch10Activity2的广播代码 -->
         <receiver
@@ -46,18 +46,27 @@
             android:enabled="true"
             android:exported="true" />
 
-        <activity android:name=".ch12Activity1">
+        <activity android:name=".ch12Activity1"></activity>
+
+        <service
+            android:name=".MyService2"
+            android:enabled="true"
+            android:exported="true" />
+        <service
+            android:name=".MediaService"
+            android:enabled="true"
+            android:exported="true" />
+
+        <activity android:name=".ch12Activity2">
+
+        </activity>
+        <activity android:name=".ch13Activity1">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-        <service
-            android:name=".MyService2"
-            android:enabled="true"
-            android:exported="true"></service>
     </application>
 
 </manifest>
