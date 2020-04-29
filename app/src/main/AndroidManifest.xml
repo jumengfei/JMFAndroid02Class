@@ -4,9 +4,9 @@
 
     <!-- 读取通讯录的权限 -->
     <uses-permission android:name="android.permission.READ_CONTACTS" />
-    <!--声明读取写入SD卡的权限-->
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <!-- 声明读取写入SD卡的权限 -->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
     <application
         android:allowBackup="true"
@@ -49,7 +49,7 @@
             android:enabled="true"
             android:exported="true" />
 
-        <activity android:name=".ch12Activity1"></activity>
+        <activity android:name=".ch12Activity1" />
 
         <service
             android:name=".MyService2"
@@ -60,10 +60,11 @@
             android:enabled="true"
             android:exported="true" />
 
-        <activity android:name=".ch12Activity2">
+        <activity android:name=".ch12Activity2"></activity>
+        <activity android:name=".ch13Activity1">
 
         </activity>
-        <activity android:name=".ch13Activity1">
+        <activity android:name=".ch14Activity1">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
