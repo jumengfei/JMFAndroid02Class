@@ -23,7 +23,6 @@ public class ch10Activity3 extends AppCompatActivity {
         Intent intent=new Intent();
         intent.putExtra("name",content);
         setResult(RESULT_OK,intent);//设置返回值
-
         finish();//关闭当前界面
 
     }

@@ -47,6 +47,7 @@ public class ch14Activity1 extends AppCompatActivity {
     }
 
     public void query(View view){
+        //查询数据
         SQLiteDatabase sqLiteDatabase=myOpenHelper.getReadableDatabase();//只读方式打开
         try {
             //cursor 游标
@@ -66,6 +67,7 @@ public class ch14Activity1 extends AppCompatActivity {
     }
 
     public void delete(View view){
+        //删除数据
         SQLiteDatabase sqLiteDatabase=myOpenHelper.getWritableDatabase();
         try{
             sqLiteDatabase.beginTransaction();
@@ -81,6 +83,7 @@ public class ch14Activity1 extends AppCompatActivity {
     }
 
     public void modify(View view){
+        //修改数据
         SQLiteDatabase sqLiteDatabase=myOpenHelper.getWritableDatabase();
         try {
             sqLiteDatabase.beginTransaction();
