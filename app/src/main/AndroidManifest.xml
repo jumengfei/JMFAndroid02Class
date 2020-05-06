@@ -7,6 +7,12 @@
     <!-- 声明读取写入SD卡的权限 -->
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <!--打电话权限-->
+    <uses-permission android:name="android.permission.CALL_PHONE"/>
+    <!--发消息-->
+    <uses-permission android:name="android.permission.SEND_SMS"/>
+    <!--相机-->
+    <uses-permission android:name="android.permission.CAMERA"/>
 
     <application
         android:allowBackup="true"
@@ -62,8 +68,7 @@
 
         <activity android:name=".ch12Activity2" />
         <activity android:name=".ch13Activity1" />
-        <activity android:name=".ch14Activity1">
-        </activity>
+        <activity android:name=".ch14Activity1"></activity>
 
         <!-- android:authorities="com.inspur.android02"  授权者 -->
         <provider
@@ -73,6 +78,9 @@
             android:exported="true" />
 
         <activity android:name=".ch15Activity1">
+
+        </activity>
+        <activity android:name=".ch16Activity1">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
